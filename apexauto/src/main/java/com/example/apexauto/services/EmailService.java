@@ -28,6 +28,8 @@ public class EmailService {
     @Async
     public void sendEmailVerification(String toEmail, String token) {
         try {
+            logger.info("Sending email verification to: {} (token: {})", toEmail,
+                    token.substring(0, Math.min(8, token.length())) + "...");
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(fromAddress);
             message.setTo(toEmail);
@@ -40,7 +42,8 @@ public class EmailService {
             );
             mailSender.send(message);
         } catch (Exception ex) {
-            logger.error("Failed to send email verification message to {}", toEmail, ex);
+            logger.error("Failed to send email verification message to {} with token: {}", toEmail,
+                    token.substring(0, Math.min(8, token.length())) + "...", ex);
         }
     }
 
@@ -48,6 +51,8 @@ public class EmailService {
     @Async
     public void sendPasswordReset(String toEmail, String token) {
         try {
+            logger.info("Sending password reset to: {} (token: {})", toEmail,
+                    token.substring(0, Math.min(8, token.length())) + "...");
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(fromAddress);
             message.setTo(toEmail);
@@ -60,7 +65,8 @@ public class EmailService {
             );
             mailSender.send(message);
         } catch (Exception ex) {
-            logger.error("Failed to send password reset message to {}", toEmail, ex);
+            logger.error("Failed to send password reset message to {} with token: {}", toEmail,
+                    token.substring(0, Math.min(8, token.length())) + "...", ex);
         }
     }
 }
