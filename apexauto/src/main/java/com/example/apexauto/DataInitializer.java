@@ -98,38 +98,38 @@ public class DataInitializer implements CommandLineRunner {
                 dto(
                         "Apex", "Apex", "Nexus S", 2026, "Pearl White",
                         4, 5, 85.0, 6.2, 459.0,
-                        false, 3, new BigDecimal("89900.00")
+                        false, 3, new BigDecimal("89900.00"), "Sedan"
                 ),
 
                 // id '2' in the frontend (TOP_PICKS[1]) — Apex Vector GT
                 dto(
                         "Apex", "Apex", "Vector GT", 2026, "Alpine White",
                         2, 4, 165.0, 9.8, 340.0,
-                        false, 2, new BigDecimal("134500.00")
+                        false, 2, new BigDecimal("134500.00"), "Sports"
                 ),
 
                 // id '3' in the frontend (TOP_PICKS[2]) — Apex Terrain X
                 dto(
                         "Apex", "Apex", "Terrain X", 2026, "Shadow Black",
                         4, 7, 130.0, 8.4, 370.0,
-                        false, 5, new BigDecimal("74900.00")
+                        false, 5, new BigDecimal("74900.00"), "SUV"
                 ),
 
                 // Landing-page listings
                 dto(
                         "Aster", "Aster", "Kestrel EV Sport", 2024, "Voltage Blue",
                         4, 5, 77.0, 4.6, 402.0,
-                        false, 4, new BigDecimal("58900.00")
+                        false, 4, new BigDecimal("58900.00"), "Sports"
                 ),
                 dto(
                         "Halcyon", "Halcyon", "Volen Lumen", 2024, "Pearl White",
                         4, 5, 90.0, 3.9, 512.0,
-                        false, 2, new BigDecimal("74500.00")
+                        false, 2, new BigDecimal("74500.00"), "Luxury"
                 ),
                 dto(
                         "Meridian", "Meridian", "Meridian Bolt", 2023, "Graphite",
                         4, 5, 64.0, 5.4, 389.0,
-                        true, 9, new BigDecimal("44900.00")
+                        true, 9, new BigDecimal("44900.00"), "Sedan"
                 )
         );
 
@@ -151,7 +151,8 @@ public class DataInitializer implements CommandLineRunner {
             double mileage,
             boolean isOnSale,
             int amountInStock,
-            BigDecimal price
+            BigDecimal price,
+            String category
     ) {
         CreateVehicleDTO dto = new CreateVehicleDTO();
         dto.setBrand(brand);
@@ -168,6 +169,7 @@ public class DataInitializer implements CommandLineRunner {
         dto.setInStock(amountInStock > 0);
         dto.setAmountInStock(amountInStock);
         dto.setPrice(price);
+        dto.setCategory(category);
         return dto;
     }
 
