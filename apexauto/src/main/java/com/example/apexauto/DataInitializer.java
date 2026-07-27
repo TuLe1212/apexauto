@@ -103,7 +103,7 @@ public class DataInitializer implements CommandLineRunner {
 
                 // id '2' in the frontend (TOP_PICKS[1]) — Apex Vector GT
                 dto(
-                        "Apex", "Apex", "Vector GT", 2026, "Alpine White", "Coupe",
+                        "Apex", "Apex", "Vector GT", 2026, "Alpine White", "Sports",
                         2, 4, 165.0, 9.8, 340.0,
                         false, 2, new BigDecimal("134500.00")
                 ),
@@ -117,17 +117,17 @@ public class DataInitializer implements CommandLineRunner {
 
                 // Landing-page listings
                 dto(
-                        "Aster", "Aster", "Kestrel EV Sport", 2024, "Voltage Blue", "Hatchback",
+                        "Aster", "Aster", "Kestrel EV Sport", 2024, "Voltage Blue", "Sports",
                         4, 5, 77.0, 4.6, 402.0,
                         false, 4, new BigDecimal("58900.00")
                 ),
                 dto(
-                        "Halcyon", "Halcyon", "Volen Lumen", 2024, "Pearl White", "Sedan",
+                        "Halcyon", "Halcyon", "Volen Lumen", 2024, "Pearl White", "Luxury",
                         4, 5, 90.0, 3.9, 512.0,
                         false, 2, new BigDecimal("74500.00")
                 ),
                 dto(
-                        "Meridian", "Meridian", "Meridian Bolt", 2023, "Graphite", "Hatchback",
+                        "Meridian", "Meridian", "Meridian Bolt", 2023, "Graphite", "Sedan",
                         4, 5, 64.0, 5.4, 389.0,
                         true, 9, new BigDecimal("44900.00")
                 )
