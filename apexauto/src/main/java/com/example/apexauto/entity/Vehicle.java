@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 
 // This is the Vehicle entity class that represents the vehicles in the application. It contains fields for vehicle information and a relationship to the User entity.
@@ -119,4 +120,11 @@ public class Vehicle {
     @Setter
     @Column(columnDefinition = "LONGTEXT")
     private String imageUrl;
+
+    // The collection of favourite entries referencing this vehicle. Cascading the delete ensures that when a vehicle
+    // is removed, all favourites referencing it are removed as well, avoiding a foreign key constraint violation.
+    @OneToMany(mappedBy = "vehicle", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @Getter
+    @Setter
+    private List<Favourites> favourites;
 }
